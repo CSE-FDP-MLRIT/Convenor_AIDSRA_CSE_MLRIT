@@ -89,7 +89,15 @@
             color: white;
         }
 
-        
+        .hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger i {
+    font-size: 2rem;
+    color: #333;
+}
 
         /* Hero Section */
         .hero {
@@ -459,6 +467,35 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+
+            .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 1rem 0;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav a {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    /* Show the hamburger icon on mobile */
+    .hamburger {
+        display: block;
+    }
+
+    /* Show the navigation menu when it's active */
+    .nav.active {
+        display: flex;
+    }
+            
             .grid-2, .grid-3, .grid-4 {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
@@ -534,24 +571,31 @@
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-university" style="font-size: 2rem; color: #1e3a8a;"></i>
-                    <div class="logo-text">MLR Institute of Technology</div>
-                </div>
-                <nav>
-                    <ul class="nav">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#objectives">Objectives</a></li>
-                        <li><a href="#topics">Topics</a></li>
-                        <li class="sticky"><a href="https://rzp.io/rzp/R332EN2Z">Register Now</a></li>
-                        <li class="sticky"><a href="https://the-zer0.github.io/PDF_Download/">Download Brochure</a></li>
-                    </ul>
-                </nav>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-university" style="font-size: 2rem; color: #1e3a8a;"></i>
+                <div class="logo-text">MLR Institute of Technology</div>
             </div>
+            <nav>
+                <!-- Hamburger Icon -->
+                <div class="hamburger" id="hamburger-icon">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <!-- Navigation Menu -->
+                <ul class="nav" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#objectives">Objectives</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li class="sticky"><a href="https://rzp.io/rzp/R332EN2Z">Register Now</a></li>
+                    <li class="sticky"><a href="https://the-zer0.github.io/PDF_Download/">Download Brochure</a></li>
+                </ul>
+            </nav>
         </div>
-    </header>
+    </div>
+</header>
+
 
     <!-- Hero Section -->
     <section class="hero">
